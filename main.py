@@ -1,5 +1,6 @@
 import openai, getpass, time
 from colorama import Fore
+import passwordHandler
 
 ############ GLOBAL VARIABLES #############
 openai.api_key = "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"
@@ -11,20 +12,12 @@ users = {"alfredlikc": "Cans1974", "rian": "12100F", "christoph": "gtx1650", "ay
 
 # login
 def loginPrompt():
-
-  # username entry
-  usernameEntry = ""
-  while usernameEntry not in users.keys():
-    usernameEntry = input("Username entry: ")
-  
-  print()
-  
-  # password entry
-  passwordEntry = ""
-  while passwordEntry != users[usernameEntry]:
-    passwordEntry = getpass.getpass("Password entry: ")
-
-  return usernameEntry
+  username = ""
+  while True:
+    loggedIn, username = passwordHandler.loginCheck()
+    if loggedIn == True:
+      return True, username
+    print(f"{Fore.RED}Incorrect username or password. Please retry.{Fore.RESET}\n")
 
 
 # chatgpt response generation
@@ -55,9 +48,9 @@ def generateGreeting():
 
 print(f"{Fore.GREEN}Welcome to Alfred's ChatGPT bot! Please {Fore.RED}login.\n{Fore.RESET}")
 
-loggedIn = loginPrompt()
+loggedInUser = loginPrompt()[1]
 
-print(f"{Fore.MAGENTA}\nGood {generateGreeting()}, {loggedIn}!{Fore.RESET}")
+print(f"{Fore.MAGENTA}\nGood {generateGreeting()}, {loggedInUser}!{Fore.RESET}")
 
 while True:
   print(f"\n{Fore.BLUE}----------------------{Fore.RESET}")
