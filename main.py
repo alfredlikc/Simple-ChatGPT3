@@ -3,7 +3,7 @@ from colorama import Fore
 import passwordHandler
 
 ############ GLOBAL VARIABLES #############
-openai.api_key = "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"
+openai.api_key = "ADD YOUR OWN API KEY"
 users = {"alfredlikc": "Cans1974", "rian": "12100F", "christoph": "gtx1650", "ay": "laptopsbad", "M": "pentiumFTW"}
 
 
