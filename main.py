@@ -4,8 +4,6 @@ import passwordHandler
 
 ############ GLOBAL VARIABLES #############
 openai.api_key = "ADD YOUR OWN API KEY"
-users = {"alfredlikc": "Cans1974", "rian": "12100F", "christoph": "gtx1650", "ay": "laptopsbad", "M": "pentiumFTW"}
-
 
 
 ############## FUNCTIONS ###############

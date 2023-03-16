@@ -4,7 +4,7 @@ import base64
 
 passwords = open("login.pass", "w", encoding = "ASCII") # open txt
 
-encoding = {"alfredlikc": "Cans1974", "rian": "12100F", "christoph": "gtx1650", "ay": "laptopsbad", "M": "pentiumFTW"}
+encoding = {"username1": "password1", "username2": "password2"}
 
 for i in encoding.keys():
     passwords.write(base64.b64encode(i.encode('utf-8')).decode('utf-8') + "\n")
